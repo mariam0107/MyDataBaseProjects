@@ -81,7 +81,7 @@ public class MainMenu {
     {
         try
         {
-        Connection myConn=DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbc","root","ponnu0303");
+        Connection myConn=DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbc","root","root");
 //        PreparedStatement myStmt=myConn.prepareStatement
 //        ("insert into Artist(id,first_name,last_name,age)values(?,?,?,?)");
         PreparedStatement myStmt=myConn.prepareStatement
@@ -101,7 +101,7 @@ public class MainMenu {
     {
         try
         {
-        Connection myConn=DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbc","root","ponnu0303");
+        Connection myConn=DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbc","root","root");
         PreparedStatement myStmt=myConn.prepareStatement("delete from Artist where id=?");
         myStmt.setInt(1,id);
         myStmt.executeUpdate();
@@ -115,7 +115,7 @@ public class MainMenu {
     {
         try
         {
-        Connection myConn=DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbc","root","ponnu0303");
+        Connection myConn=DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbc","root","root");
         PreparedStatement myStmt=myConn.prepareStatement("update Artist set first_name=?,last_name=?,age=? where id=?");
         myStmt.setString(1,fname);
         myStmt.setString(2,lname);
@@ -133,7 +133,7 @@ public class MainMenu {
     {
         try
         {
-        Connection myConn=DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbc","root","ponnu0303");
+        Connection myConn=DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbc","root","root");
         Statement myStmt=myConn.createStatement();
         ResultSet rs=myStmt.executeQuery("Select * from Artist");
             System.out.println("ID   FIRST NAME          LAST NAME           AGE  \n");
@@ -155,7 +155,7 @@ public class MainMenu {
     {
         try
         {
-        Connection myConn=DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbc","root","ponnu0303");
+        Connection myConn=DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbc","root","root");
         PreparedStatement myStmt=myConn.prepareStatement("Select * from Artist where id=?");
         myStmt.setInt(1,id);
         ResultSet rs=myStmt.executeQuery();
